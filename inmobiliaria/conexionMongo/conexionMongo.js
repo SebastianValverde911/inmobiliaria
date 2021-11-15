@@ -6,4 +6,5 @@ mongoose.connect(MONGO_URL, {useNewUrlParser: true, useUnifiedTopology:true}).th
 }).catch((error) =>{
     console.log("mongodb not connected");
     console.log(error);
-});
+}); 
+

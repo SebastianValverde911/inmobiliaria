@@ -1,0 +1,32 @@
+<!--Desde el formulario que llegue al servicio modelo-->
+<!DOCTYPE html>
+<html ng-app="myApp" id="myApp" lang="es">
+    <head>
+        <title>test</title>
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+        <script src="../upload/main.js" type="text/javascript"></script> 
+    </head>
+    <body ng-controller="myController">
+        {{msg}}
+        <a href="javascript:;" id = "lbtnTest">Llamar</a>
+
+        <form>
+            <div class="form-group">
+                <label for="valor">Nombre</label><br>
+                <input type="text" class="form-control input-lg text-center" placeholder="Inserte su nombre" ng-model="formData.nombre"><br>
+                <label for="valor">Apellido</label><br>
+                <input type="text" class="form-control input-lg text-center" placeholder="Inserte su apellido" ng-model="formData.apellido">
+                <br>
+                <label for="valor">Cedula</label><br>
+                <input type="text" class="form-control input-lg text-center" placeholder="Inserta la cedula" id="cedula" ng-model="formData.cedula">
+                <br>
+               
+                <input type="text" class="form-control input-lg text-center" placeholder="Inserta una clave" ng-model="formData.clave">
+                <br>
+
+                {{todos}}
+            </div>
+            <button class="btn btn-primary btn-lg" ng-click="createTodo()">Añadir</button>
+        </form>
+    </body>
+</html>
