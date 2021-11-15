@@ -28,6 +28,5 @@ usuario.find({},(err,docs)=>{
     console.log(docs);
 })
 
-
 //});
 
