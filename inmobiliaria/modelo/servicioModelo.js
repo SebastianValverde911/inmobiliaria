@@ -1,67 +1,69 @@
 const express = require("express");
-const { createReadStream } = require('fs');
-var usuario = require("./users");
-var inmueble = require('./inmuebles');
-
-require('../conexionMongo/conexionMongo');
-
-//Creamos instancia de express
+const { createReadStream } = require('fs')
+var modelo = require('./user')
+var modeloUbicacion = require('./ubicacion')
+var modeloInmueble = require('./inmuebles')
 const app = new express();
-
+const HTML_CONTENT_TYPE = 'text/html'
+const bodyParser = require("body-parser");
+app.use(bodyParser.json());
 app.use(express.static("./public"));
-app.get('/', (req, res) => {
-     res.writeHead(200,{'Content-Type':'text/html;charset=UTF-8'});
- 
-     createReadStream('inmobiliaria/vista/vista.html').pipe(res)
+const path = require("path");
+require('../conexionMongo/conexionMongo')
 
-     usuario.find({}, (err, docs) => {
-       
-        console.log(docs);
-        /*  res.send({
-            docs: docs 
-        }) */
+app.post("/insertarUsuario", (req, res) => {
+  const num = 9
+  var myobj = { nombre: req.body.nombre, apellido: req.body.apellido, cedula: req.body.cedula, tel: req.body.tel, correo: req.body.correo, clave: req.body.clave };
+  modelo.collection.insertOne(myobj, function (err, res) {
+    if (err) throw err;
+
+  })
+  res.send("Usuario creado")
+})
+
+app.post("/insertarInmuebles", (req, res) => {
+  //coloco la lógica para insertar un nuevo inmueble
+  modeloUbicacion.find({ barrio: 'lopez' }, (err, docs) => {
+    var myobj = { nombre: req.body.nombre, tipo: req.body.tipo, imagen: req.body.imagen, ubicacion: docs[0]._id };
+    modeloInmueble.collection.insertOne(myobj, function (err, res) {
+      if (err) throw err;
+
     })
-});
 
-app.post("/upload", (req, res) => {
-    var myobjUser = {  nombre: req.body.nombre,apellido: req.body.apellido, cedula: req.body.cedula, clave: req.body.clave };
-    usuario.collection.insertOne(myobjUser, function (err, res) {
-        if (err) throw err;
-    });
-    console.log("1 usuario insertado");
-});
+    res.send("Inmueble creado")
+  })
 
-//Abrir puerto del servidor
+})
+
+app.post("/insertarUbicacion", (req, res) => {
+
+  var myobj = { zona: req.body.zona, barrio: req.body.barrio};
+  modeloUbicacion.collection.insertOne(myobj, function (err, res) {
+    if (err) throw err;
+  })
+
+  res.send("ubicacion guardada")
+})
+
+
+app.get('/', (req, res) => {
+  res.writeHead(200, { 'Content-Type': HTML_CONTENT_TYPE })
+
+
+  createReadStream('inmueble.html').pipe(res)
+
+
+})
 
 app.listen(9000, () => {
-    console.log("Servidor escuchando por el puerto 9000");
-});
 
+  console.log("aplicacion corriendo en el puerto 9000")
 
-/* function insertarInmueble() {
-    var myobjInmueble = {nombre:"casa cuarta", tipo:"apartamento",imagen:"ruta/imagen2.png"};
-    inmueble.collection.insertOne(myobjInmueble, function(err,res) {
-        if(err) throw err;
-        console.log("1 inmueble insertado");
-    });
-} */
-
-//app.post("/",(req,res) => {
-
-//Codigo funciona para insertar
-/*
-var myobjUser = {apellido:"ortiz",cedula:"321584",nombre:"isabella",clave:"123"};
-usuario.collection.insertOne(myobjUser, function(err,res) {
-    if(err) throw err;
-    console.log("1 usuario insertado");
-});*/
+})
 
 
 
-//Se trae la info de la collection de usuarios
-/* usuario.find({}, (err, docs) => {
-    console.log(docs);
-}) */
 
-//});
+
+
 

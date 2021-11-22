@@ -1,7 +1,8 @@
+const { ObjectId } = require('bson');
 var mongoose = require('mongoose');
-//set up default mongoose connection
-const inmueblescheme = new mongoose.Schema({
-    nombre:{
+
+const inmobiliariaEsquema = new mongoose.Schema({
+    nombre: {
         type: String
     },
     tipo: {
@@ -11,8 +12,7 @@ const inmueblescheme = new mongoose.Schema({
         type: String
     },
     ubicacion: {
-        type: String
+        type: ObjectId
     }
-});
-
-module.exports = mongoose.model('inmuebles',inmueblescheme);
+})
+module.exports = mongoose.model('inmuebles', inmobiliariaEsquema)
