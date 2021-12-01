@@ -1,0 +1,46 @@
+<!-- Creacion de componentes ng generate component registrarUsuario-->
+<div class="papa">
+    <div class="hijoUno"> 
+        <div class="img">
+            <img src="https://misiontic.ucaldas.edu.co/pluginfile.php/1/theme_mb2nl/loginlogo/1634836373/Logo_MisionTIC2022%20%281%29%20-%20copia.png" />
+        </div>
+    </div>
+    <div class="hijoDos">
+        <div ng-controller="controlado" class="contenedor">
+            <h1>Registro de usuario</h1>
+            
+            <form >
+                <div class="mb-3">
+                    <label for="nombre" class="form-label">Nombre</label>
+                    <input type="text" class="form-control" id="nombre"  >
+                </div>
+                <div class="mb-3">
+                    <label for="apellido" class="form-label">Apellido</label>
+                    <input type="text" class="form-control" id="apellido" >
+                </div>
+                <div class="mb-3">
+                    <label for="cedula" class="form-label">Cedula</label>
+                    <input type="text" class="form-control" id="cedula" >
+                </div>
+                <div class="mb-3">
+                    <label for="telefono" class="form-label">Telefono</label>
+                    <input type="text" class="form-control" id="telefono" >
+                </div>
+                <div class="mb-3">
+                    <label for="email" class="form-label">Correo</label>
+                    <input type="email" class="form-control" id="email" aria-describedby="emailHelp"
+                        >
+                </div>
+                <div class="mb-3">
+                    <label for="clave" class="form-label">Password</label>
+                    <input type="password" class="form-control" id="clave" >
+                </div>
+    
+                <button type="submit" class="btn btn-primary" (click)="Saludo()">Aceptar</button>
+            </form>
+            
+        </div>
+    </div>
+</div>
+   
+   

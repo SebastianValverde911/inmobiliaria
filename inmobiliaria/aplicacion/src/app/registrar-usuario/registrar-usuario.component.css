@@ -1,0 +1,46 @@
+
+.contenedor {
+    background-color: rgba(0, 0, 0, 0.3);
+    padding: 50px;
+    border-radius: 30px;
+    color: white;
+}
+
+h1 {
+    text-align: center;
+    margin-top: -16px;
+}
+
+.papa{
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+}
+
+.hijoUno {
+    width: 30%;
+}
+.hijoDos {
+    width: 20%;
+    padding-top: 7%;
+}
+
+.img img {
+    width: 500px;
+}
+
+ul {
+    background-color: #4560d6;
+}
+ul li {
+    display: inline-block;
+    padding: 20px;
+}
+ul li a{
+   color: white;
+}
+
+ul li:hover {
+    background-color: aqua;
+}

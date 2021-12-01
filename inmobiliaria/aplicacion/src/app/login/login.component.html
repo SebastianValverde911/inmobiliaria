@@ -1,0 +1,23 @@
+<div class="contenedor">
+  <div>
+    <h1>Login</h1>
+  </div>
+  <form>
+    <div class="mb-3">
+      <label for="correo" class="form-label">Correo</label>
+      <input type="text" class="form-control" id="correo" ng-model="formData.correo"/>
+      <label for="password" class="form-label">password</label>
+      <input type="password" class="form-control" id="password" ng-model="formData.password"/>
+    </div>
+  </form>
+  <button type="submit" class="btn btn-primary" ng-click="ingresarUsuario()">Ingresar</button>
+  
+  <p>No tienes cuenta? <br><a href="http://localhost:4200/registrar-usuario">Registrate aquí</a></p>
+</div>
+
+<div class="img">
+  <img src="https://misiontic2022.mintic.gov.co/mt2022/assets/assets/images/logo-mision.png" />
+</div>
+
+
+

@@ -1,0 +1,17 @@
+/* You can add global styles to this file, and also import other style files */
+.super {
+    height: 1027px;
+    margin: 0px;
+    padding: 0px;
+    background: rgb(34, 89, 195);
+    background: linear-gradient(
+        0deg, rgb(65 99 183) 0%, rgb(254 254 255) 100%);
+}
+
+footer {
+    text-align: center;
+    background: black;
+    color: white;
+    height: 50px;
+    line-height: 50px;
+}
