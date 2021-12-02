@@ -14,7 +14,7 @@ require('../conexionMongo/conexionMongo');
 var cors = require('cors');
 app.use(cors());
 
-app.post("/insertarUsuario", (req, res) => {
+app.post("/insertarUsuariow", (req, res) => {
   console.log("Desde el modal");
   /* const num = 9
   var myobj = { nombre: req.body.nombre, apellido: req.body.apellido, cedula: req.body.cedula, tel: req.body.tel, correo: req.body.correo, clave: req.body.clave };
@@ -39,6 +39,38 @@ app.post("/insertarInmueblew", (req, res) => {
    console.log("Ingreso a insertarInmuebles");
 });
 
+app.put("/insertarUsuario",(req, res)=>{
+  console.log("Insertar usuario desde el servidor")
+
+  /* const respuesta = {
+    nombre: req.body.nombre,
+    tipo: req.body.tipo,
+    imagen: req.body.imagen,
+    ubicacion: req.body.ubicacion
+  } */
+
+   
+    var myobj = { 
+      nombre: req.body.nombre, 
+      apellido: req.body.apellido,
+      cedula: req.body.cedula,
+      telefono: req.body.telefono,
+      correo: req.body.correo,
+      password: req.body.password
+    };
+
+    modelo.collection.insertOne(myobj, function (err, res) {
+      if (err) throw err;
+    })
+    
+    const mensaje = {
+      mensaje: 'datos de usuario guardados',
+      data: myobj
+    }
+
+  res.send(JSON.stringify(mensaje));
+})
+
 app.put("/insertarInmueble",(req, res)=>{
   console.log("Insertar inmnueble")
 
@@ -62,20 +94,29 @@ app.put("/insertarInmueble",(req, res)=>{
     })
     
     const mensaje = {
-      mensaje: 'datos guardados'
+      mensaje: 'datos guardados',
+      data: myobj
     }
 
   res.send(JSON.stringify(mensaje));
 })
 
-app.post("/insertarUbicacion", (req, res) => {
+app.put("/insertarUbicacion", (req, res) => {
 
-  var myobj = { zona: req.body.zona, barrio: req.body.barrio};
+  var myobj = { 
+    zona: req.body.zona, 
+    barrio: req.body.barrio};
+
   modeloUbicacion.collection.insertOne(myobj, function (err, res) {
     if (err) throw err;
   })
 
-  res.send("ubicacion guardada")
+   const mensaje = {
+      mensaje: 'datos guardados',
+      data: myobj
+    }
+
+  res.send(JSON.stringify(mensaje));
 });
 
 

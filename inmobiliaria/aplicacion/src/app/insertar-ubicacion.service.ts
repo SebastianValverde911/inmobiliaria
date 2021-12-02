@@ -5,16 +5,17 @@ import { Data } from '@angular/router';
 @Injectable({
   providedIn: 'root'
 })
-export class InsertarUsuarioService {
+export class InsertarUbicacionService {
 
   constructor(private http: HttpClient) { }
 
-  registrarUsuario(inmueble: Data){
-    console.log("Servicio registrar usuario");
-    this.http.put("http://localhost:9000/insertarUsuario",inmueble).subscribe( data => 
+  registrarUbicacion(inmueble: Data){
+    console.log("Servicio ubicacion");
+    this.http.put("http://localhost:9000/insertarUbicacion",inmueble).subscribe( data => 
       {
         console.log(data);
       }
     );
   }
 }
+ 

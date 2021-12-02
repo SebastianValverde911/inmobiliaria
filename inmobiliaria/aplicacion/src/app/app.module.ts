@@ -18,6 +18,7 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { ConsultaInmueblesService } from './consulta-inmuebles.service';
 import { ConsultaUsuariosService } from './consulta-usuarios.service';
 import { InsertarInmuebleService } from './insertar-inmueble.service';
+import { RegistrarUbicacionComponent } from './registrar-ubicacion/registrar-ubicacion.component';
 
 
 @NgModule({
@@ -29,7 +30,8 @@ import { InsertarInmuebleService } from './insertar-inmueble.service';
     RegistrarInmuebleComponent,
     ConsultaUsuarioComponent,
     LoginComponent,
-    DashboardComponent
+    DashboardComponent,
+    RegistrarUbicacionComponent
   ],
   imports: [
     BrowserModule,

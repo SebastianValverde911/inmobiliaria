@@ -6,6 +6,7 @@ import { RegistrarInmuebleComponent } from 'src/app/registrar-inmueble/registrar
 import { ConsultaInmuebleComponent } from 'src/app/consulta-inmueble/consulta-inmueble.component';
 import { ConsultaUsuarioComponent } from 'src/app/consulta-usuario/consulta-usuario.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
+import { RegistrarUbicacionComponent } from './registrar-ubicacion/registrar-ubicacion.component';
 
 const routes: Routes = [
   {
@@ -19,6 +20,10 @@ const routes: Routes = [
   {
     path:'registrar-inmueble',
     component: RegistrarInmuebleComponent
+  },
+  {
+    path:'registrar-ubicacion',
+    component: RegistrarUbicacionComponent
   },
   {
     path:'consultar-inmuebles',

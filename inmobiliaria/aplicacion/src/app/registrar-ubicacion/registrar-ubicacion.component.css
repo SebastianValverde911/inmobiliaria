@@ -1,0 +1,18 @@
+
+.contenedor {
+    background-color: rgba(0, 0, 0, 0.3);
+    width: 400px;
+    margin: 0 auto;
+    padding: 50px;
+    border-radius: 30px;
+    color: white;
+}
+
+h1 {
+    text-align: center;
+}
+
+.img {
+    text-align: center;
+    margin-top: 60px;
+}

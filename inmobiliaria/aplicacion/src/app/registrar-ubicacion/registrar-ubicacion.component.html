@@ -1,0 +1,20 @@
+<div ng-controller="controlado" class="contenedor">
+    <h1>Registrar Ubicación</h1>
+ 
+    
+        <div class="mb-3">
+            <label for="zona" class="form-label">Zona</label>
+            <input type="text" class="form-control" id="zona" ng-model="formDataUbicacion.zona">
+        </div>
+        <div class="mb-3">
+            <label for="barrio" class="form-label">Barrio</label>
+            <input type="text" class="form-control" id="barrio" ng-model="formDataUbicacion.barrio">
+        </div>
+        
+        <button  class="btn btn-primary" (click) ="registrarUbicacion()">Registrar</button>
+    
+    
+</div>
+<div class="img">
+    <img src="https://misiontic2022.mintic.gov.co/mt2022/assets/assets/images/logo-mision.png" />
+</div>
