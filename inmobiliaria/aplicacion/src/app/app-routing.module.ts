@@ -7,6 +7,11 @@ import { ConsultaInmuebleComponent } from 'src/app/consulta-inmueble/consulta-in
 import { ConsultaUsuarioComponent } from 'src/app/consulta-usuario/consulta-usuario.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { RegistrarUbicacionComponent } from './registrar-ubicacion/registrar-ubicacion.component';
+import { ConsultarCasasComponent } from './consultar-casas/consultar-casas.component';
+import { ConsultarApartamentosComponent } from './consultar-apartamentos/consultar-apartamentos.component';
+
+
+
 
 const routes: Routes = [
   {
@@ -32,6 +37,14 @@ const routes: Routes = [
   {
     path:'consultar-usuarios',
     component: ConsultaUsuarioComponent
+  },
+  {
+    path:'consultar-casas',
+    component: ConsultarCasasComponent
+  },
+  {
+    path:'consultar-apartamentos',
+    component: ConsultarApartamentosComponent
   },
   {
     path:'dashboard',

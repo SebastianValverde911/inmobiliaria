@@ -7,13 +7,16 @@ import { ConsultaInmueblesService } from '../consulta-inmuebles.service';
   styleUrls: ['./consulta-inmueble.component.css']
 })
 export class ConsultaInmuebleComponent implements OnInit {
-
+  inmueble:any;
   constructor(
     private serviceInmueble:ConsultaInmueblesService    
     ) { }
 
   ngOnInit(): void {
-    this.serviceInmueble.getInmuebles();
+    this.serviceInmueble.getInmuebles().subscribe(data =>{
+      this.inmueble = data;
+      console.log(data);
+    } );
   }
 
 }

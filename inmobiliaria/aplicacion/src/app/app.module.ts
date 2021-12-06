@@ -13,13 +13,16 @@ import { RegistrarInmuebleComponent } from './registrar-inmueble/registrar-inmue
 import { ConsultaUsuarioComponent } from './consulta-usuario/consulta-usuario.component';
 import { LoginComponent } from './login/login.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
+import { RegistrarUbicacionComponent } from './registrar-ubicacion/registrar-ubicacion.component';
+import { ConsultarCasasComponent } from './consultar-casas/consultar-casas.component';
+import { ConsultarApartamentosComponent } from './consultar-apartamentos/consultar-apartamentos.component';
 
 /* Servicios */
 import { ConsultaInmueblesService } from './consulta-inmuebles.service';
 import { ConsultaUsuariosService } from './consulta-usuarios.service';
 import { InsertarInmuebleService } from './insertar-inmueble.service';
-import { RegistrarUbicacionComponent } from './registrar-ubicacion/registrar-ubicacion.component';
-
+import { ConsultarCasasService } from './consultar-casas.service';
+import { ConsultarApartamentosService } from './consultar-apartamentos.service';
 
 @NgModule({
   declarations: [
@@ -31,7 +34,9 @@ import { RegistrarUbicacionComponent } from './registrar-ubicacion/registrar-ubi
     ConsultaUsuarioComponent,
     LoginComponent,
     DashboardComponent,
-    RegistrarUbicacionComponent
+    RegistrarUbicacionComponent,
+    ConsultarCasasComponent,
+    ConsultarApartamentosComponent
   ],
   imports: [
     BrowserModule,
@@ -42,7 +47,9 @@ import { RegistrarUbicacionComponent } from './registrar-ubicacion/registrar-ubi
   providers: [
     ConsultaInmueblesService,
     ConsultaUsuariosService,
-    InsertarInmuebleService
+    InsertarInmuebleService,
+    ConsultarCasasService,
+    ConsultarApartamentosService
   ],
   bootstrap: [AppComponent]
 })

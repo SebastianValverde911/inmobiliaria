@@ -13,9 +13,7 @@ export class ConsultaUsuariosService {
       'Content-Type':'application/X-WWW-form-urlencoded'
     });
 
-    this.http.get("http://localhost:9000/consultaUsuarios",{headers:headers}).subscribe(data =>{
-      console.log(data);
-    } )
+    return this.http.get("http://localhost:9000/consultaUsuarios")
     
   }
 }

@@ -5,16 +5,17 @@
 <div class="lightbox-gallery">
     <div class="container">
         <div class="intro">
-            <h2 class="text-center">INMUEBLES</h2>
-            <p class="text-center">Encuentra el inmueble de tus sueños</p>
+            <h2 class="text-center">Apartamentos</h2>
+            <p class="text-center">Encuentra el apartamento de tus sueños</p>
         </div>
         <div class="card-group">
-            <div class='col-lg-3 d-none d-lg-block' *ngFor='let index of inmueble; let i = index; let even = even'>
+            <div class='col-lg-3 d-none d-lg-block' *ngFor='let index of apartamentos; let i = index; let even = even'>
                 <div class="card" style="width: 18rem; box-shadow: 5px 5px 5px #00000070;">
-                    <img src="{{inmueble[i].imagen}}" class="card-img-top" alt="...">
+                    <img src="{{apartamentos[i].imagen}}" class="card-img-top" alt="...">
                     <div class="card-body">
-                      <h5 class="card-title">{{inmueble[i].nombre}}</h5>
-                      <p class="card-text">{{inmueble[i].tipo}}</p>
+                      <h5 class="card-title">{{apartamentos[i].nombre}}</h5>
+                      <p class="card-text">tipo: {{apartamentos[i].tipo}}</p>
+                      <p class="card-text">Ubicación: {{apartamentos[i].ubicacion}}</p>
                       <a href="#" class="btn btn-primary">Contactar</a>
                     </div>
                   </div>

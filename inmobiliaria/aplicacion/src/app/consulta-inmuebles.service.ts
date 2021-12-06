@@ -16,9 +16,7 @@ export class ConsultaInmueblesService {
       'Content-Type':'application/x-www-form-urlencoded'
     });
     
-    this.http.get("http://localhost:9000/consultaInmuebles",{headers:headers}).subscribe(data =>{
-      console.log(data);
-    } )
+    return this.http.get("http://localhost:9000/consultaInmuebles")
   }
 
 }

@@ -122,39 +122,40 @@ app.put("/insertarUbicacion", (req, res) => {
 
 app.get('/', (req, res) => {
   res.writeHead(200, { 'Content-Type': HTML_CONTENT_TYPE })
-
-
   createReadStream('inmueble.html').pipe(res)
-
-
 });
 
 app.get('/consultaInmuebles',(req,res)=>{
 
-  res.header('Access-Control-Allow-Origin','*');
-  res.header('Access-Control-Allow-Headers','Authorization', 'X-API-KEY', 'Origin', 'X-Requested-With',' Content-Type', 'Accept', 'Access-Control-Allow','Request-Method');
-  res.header('Access-Control-Allow-Methods','GET, POST, OPTIONS, PUT, DELETE');
-
-  const datos = {
-    nombre:'apartamento',
-    zona:'lopez'
-  }
-
-  res.end(JSON.stringify(datos));
+  modeloInmueble.find({ }, (err, docs) => {
+    
+    res.end(JSON.stringify(docs));
+   
+  })
   
 });
 
 app.get('/consultaUsuarios',(req,res)=>{
-  res.header('Access-Control-Allow-Origin','*');
-  res.header('Access-Control-Allow-Headers','Authorization', 'X-API-KEY', 'Origin', 'X-Requested-With',' Content-Type', 'Accept', 'Access-Control-Allow','Request-Method');
-  res.header('Access-Control-Allow-Methods','GET, POST, OPTIONS, PUT, DELETE');
 
-  const datos = {
-    nombre:'Juan',
-    apellido:'Valverde'
-  }
+  modelo.find({  }, (err, docs) => {
+    res.end(JSON.stringify(docs));
+  })
+});
 
-  res.end(JSON.stringify(datos));
+app.get('/consultarCasas',(req,res) =>{
+  //Nos conectamos en la base de datos y obtenemos los datos
+  //req.query.tipo
+  modeloInmueble.find({ tipo: req.query.tipo }, (err, docs) => {
+    res.end(JSON.stringify(docs));
+  })
+});
+
+app.get('/consultarApartamentos',(req,res) =>{
+  //Nos conectamos en la base de datos y obtenemos los datos
+  //req.query.tipo
+  modeloInmueble.find({ tipo: req.query.tipo }, (err, docs) => {
+    res.end(JSON.stringify(docs));
+  })
 });
 
 app.listen(9000, () => {

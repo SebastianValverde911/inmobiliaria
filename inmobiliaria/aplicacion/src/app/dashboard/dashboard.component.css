@@ -35,3 +35,8 @@ nav .menu {
 .menu li:hover {
     background-color: #c3c3c3;
 }
+
+.menu a {
+    text-decoration: none;
+    color: white;
+}

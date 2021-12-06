@@ -12,7 +12,8 @@ const inmobiliariaEsquema = new mongoose.Schema({
         type: String
     },
     ubicacion: {
-        type: ObjectId
+        /* type: ObjectId */
+        type: String
     }
 })
 module.exports = mongoose.model('inmuebles', inmobiliariaEsquema)
